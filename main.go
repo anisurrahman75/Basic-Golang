@@ -1,16 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type Myslice []int
-
-func (s Myslice) remmoveIth(index int) []int {
-	return append(s[:index], s[index+1:]...)
-}
 func main() {
-	sl := Myslice{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
-	fmt.Println(sl)
-	sl = sl.remmoveIth(3)
-	fmt.Println(sl)
+	s := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	p := append(s, 20)
+	display(p)
+	p = append(p[0:3], 10)
+	display(p)
+	p = p[0:cap(p)]
+	display(p)
+	s = append(s[0 : len(s)-1])
+	display(s)
+
+	s = append(s, 5)
+	//s = append(s[0 : len(s)-1])
+	display(s)
+}
+func display(s []int) {
+	fmt.Printf("Slice length: %v\nSlice cap: %v\nSlice: %v", len(s), cap(s), s)
+	fmt.Println()
+	fmt.Println()
 
 }
