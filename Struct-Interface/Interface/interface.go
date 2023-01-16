@@ -40,3 +40,6 @@ func main() {
 func printArea(s Shape) {
 	fmt.Println(s.area())
 }
+
+//https://golangbot.com/interfaces-part-1/
+//https://golangbot.com/interfaces-part-2/
